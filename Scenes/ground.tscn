@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://ljf8mystmapr"]
+
+[ext_resource type="Script" path="res://Scripts/Ground.cs" id="1_ambql"]
+[ext_resource type="Texture2D" uid="uid://dqfq810smt33y" path="res://Assets/Texture/Ground.png" id="2_vbdqb"]
+[ext_resource type="Shape2D" uid="uid://dohakj558xyn3" path="res://CollisionShape/GrounCollision.tres" id="3_4lmvi"]
+[ext_resource type="Script" path="res://Scripts/ObstacleSpawner.cs" id="4_ap8h2"]
+
+[node name="Ground" type="Node2D"]
+position = Vector2(112, 576)
+script = ExtResource("1_ambql")
+_speed = -200.0
+
+[node name="Ground_1" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="GroundSprite" type="Sprite2D" parent="Ground_1"]
+position = Vector2(0, 36)
+texture = ExtResource("2_vbdqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_1"]
+position = Vector2(0, 36)
+shape = ExtResource("3_4lmvi")
+
+[node name="Ground_2" type="StaticBody2D" parent="."]
+position = Vector2(2400, 0)
+collision_layer = 2
+
+[node name="GroundSprite" type="Sprite2D" parent="Ground_2"]
+position = Vector2(0, 36)
+texture = ExtResource("2_vbdqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_2"]
+position = Vector2(0, 36)
+shape = ExtResource("3_4lmvi")
+
+[node name="ObstacleSpawner" type="Node" parent="."]
+script = ExtResource("4_ap8h2")
+
+[node name="Timer" type="Timer" parent="ObstacleSpawner"]
+
+[node name="SpawnPoint" type="Node2D" parent="ObstacleSpawner"]
+position = Vector2(1201, 560)

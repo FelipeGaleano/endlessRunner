@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c74ui0glvh64y"]
+
+[ext_resource type="Script" path="res://Scripts/main.cs" id="1_5mwo1"]
+[ext_resource type="PackedScene" uid="uid://ljf8mystmapr" path="res://Scenes/ground.tscn" id="2_hp877"]
+[ext_resource type="PackedScene" uid="uid://bqwc0ct8vqf2b" path="res://Scenes/player.tscn" id="3_ycim2"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_5mwo1")
+
+[node name="Ground" parent="." instance=ExtResource("2_hp877")]
+
+[node name="Player" parent="." instance=ExtResource("3_ycim2")]
+position = Vector2(82, 564)
+scale = Vector2(4, 4)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://sp1ls80cw72r"]
+
+[ext_resource type="Script" path="res://Pray.cs" id="1_w7ffg"]
+[ext_resource type="Texture2D" uid="uid://bil5o1h1v8rny" path="res://Assets/Obstacles/Pray.png" id="2_l5sg5"]
+[ext_resource type="Shape2D" uid="uid://c3jvo84cbko0i" path="res://CollisionShape/prayCollsion.tres" id="3_mkr0j"]
+
+[node name="Pray" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_w7ffg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_l5sg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = ExtResource("3_mkr0j")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

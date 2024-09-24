@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://by6xv0u37wbyr"]
+
+[ext_resource type="Script" path="res://Scripts/Flying.cs" id="1_30a5a"]
+[ext_resource type="Texture2D" uid="uid://knif84j1mnub" path="res://Assets/Obstacles/BatIdle/tile000.png" id="1_apr5y"]
+[ext_resource type="Texture2D" uid="uid://xffqr18axdv1" path="res://Assets/Obstacles/BatIdle/tile001.png" id="2_5nlux"]
+[ext_resource type="Texture2D" uid="uid://ckt8ai5gnr86k" path="res://Assets/Obstacles/BatIdle/tile002.png" id="3_d7wbi"]
+[ext_resource type="Texture2D" uid="uid://d07yafmdkc6ap" path="res://Assets/Obstacles/BatIdle/tile003.png" id="4_3e0cg"]
+[ext_resource type="Texture2D" uid="uid://du7x44ho8kct1" path="res://Assets/Obstacles/BatIdle/tile004.png" id="5_i1l1u"]
+[ext_resource type="Texture2D" uid="uid://clwkkkwj8yjji" path="res://Assets/Obstacles/BatIdle/tile005.png" id="6_upa4f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdd7v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_apr5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5nlux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d7wbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3e0cg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i1l1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_upa4f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4vb4"]
+
+[node name="Flying" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_30a5a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bdd7v")
+autoplay = "default"
+frame_progress = 0.591095
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_a4vb4")
